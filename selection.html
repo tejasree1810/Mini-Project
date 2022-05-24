@@ -3,19 +3,44 @@ title: Selection
 layout: default
 ---
 <h1 style="margin: 20px !important; ">Selection</h1>
-<form method="post">
+<form>
     <select class="form-select mb-4" aria-label="Default select example" style="margin-bottom: 25px !important;"
-        required>
+        id="item" name="item" required>
         <option selected>Select Item</option>
-        <option value="1">Item 1</option>
-        <option value="2">Item 2</option>
+        <option value="Item1">Item 1</option>
+        <option value="Item2">Item 2</option>
     </select>
     <select class="form-select mb-5" aria-label="Default select example" style="margin-bottom: 45px !important;"
-        required>
+        id="sector" name="sector" required>
         <option selected>Select Sector</option>
         <option value="1">Design Sector</option>
         <option value="2">Production Sector</option>
         <option value="3">Testing Sector</option>
     </select>
-    <button type="submit" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Submit</button>
+    <button type="button" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto"
+        onclick="select_fun(this.parentElement.item.value, this.parentElement.sector.value)">Submit</button>
 </form>
+<div id="result">
+
+</div>
+<script>
+    function select_fun(item, sector) {
+        let master = '{{ site.data.master | jsonify }}';
+        console.log(item, sector);
+        let item_v = master.filter(x => x.ItemName == item);
+        if (sector == "1") {
+
+        }
+        else if (sector == "2") {
+            document.getElementById("result").innerHTML = `<span class="alert alert-warning">The selected item is produced in the sector ${item_v.ProductionSector}</span>`
+        }
+        else if (sector == "3") {
+            if (item_v.QualityTest == "Passed") {
+                document.getElementById("result").innerHTML = `The element is tested!<br> ${item_v}`
+            }
+            else {
+                document.getElementById("result").innerHTML = `The element is not tested!`
+            }
+        }
+    }
+</script>

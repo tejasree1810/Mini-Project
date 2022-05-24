@@ -3,7 +3,7 @@ title: Item 1
 layout: default
 ---
 <h1 style="margin: 20px !important; ">Personalize Item 1</h1>
-<form method="post">
+<form>
     <select class="form-select" aria-label="Default select example" style="margin-bottom: 25px !important;" required>
         <option selected>Select Quantity</option>
         <option value="1">50g</option>
@@ -17,10 +17,13 @@ layout: default
         <option value="2">Nuts</option>
         <option value="3">Orange</option>
     </select>
-    <button type="submit" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Submit</button>
-    <div class="alert alert-success alert-dismissible fade show col-lg" role="alert"
-        style="margin-top: 20px !important;">
-        <strong>Your data is collected successfully and will be manufactured shortly!</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button type="button" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto"
+        onclick="showAlert()">Submit</button>
+    <div id="alert">
     </div>
 </form>
+<script>
+    function showAlert() {
+        document.getElementById("alert").innerHTML = `<strong class="alert alert-success alert-dismissible fade show col-lg" >Your data is collected successfully and will be manufactured shortly!</strong>`
+    }
+</script>
