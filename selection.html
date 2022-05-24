@@ -22,7 +22,7 @@ layout: default
 </form>
 <br>
 <br>
-<div id="result">
+<div id="result" width=500px>
 
 </div>
 <script>
@@ -38,10 +38,10 @@ layout: default
         }
         else if (sector == "3") {
             if (item_v.QualityTest == "Passed") {
-                document.getElementById("result").innerHTML = `The element is tested!<br> ${JSON.stringify(item_v)}`
+                document.getElementById("result").innerHTML = `<span class="alrt alert-success">The element is tested!</span><br> ${JSON.stringify(item_v)}`
             }
             else {
-                document.getElementById("result").innerHTML = `The element is not tested!`
+                document.getElementById("result").innerHTML = `<span class="alert alert-danger>The element is not tested!</span>`
             }
         }
     }
