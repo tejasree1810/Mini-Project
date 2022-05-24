@@ -20,6 +20,8 @@ layout: default
     <button type="button" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto"
         onclick="select_fun(this.parentElement.item.value, this.parentElement.sector.value)">Submit</button>
 </form>
+<br>
+<br>
 <div id="result">
 
 </div>
@@ -32,11 +34,11 @@ layout: default
 
         }
         else if (sector == "2") {
-            document.getElementById("result").innerHTML = `<span class="alert alert-warning">The selected item is produced in the sector ${item_v.ProductionSector}</span>`
+            document.getElementById("result").innerHTML = `<div class="alert alert-warning">The selected item is produced in the sector ${item_v.ProductionSector}</div>`
         }
         else if (sector == "3") {
             if (item_v.QualityTest == "Passed") {
-                document.getElementById("result").innerHTML = `The element is tested!<br> ${item_v}`
+                document.getElementById("result").innerHTML = `The element is tested!<br> ${JSON.stringify(item_v)}`
             }
             else {
                 document.getElementById("result").innerHTML = `The element is not tested!`
