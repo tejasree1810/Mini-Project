@@ -17,7 +17,7 @@ layout: default
 </form>
 <script>
     function login_fun(username, password) {
-        let users = '{{ site.data.user_db }}';
+        let users = '{{ site.data.user_db | jsonify }}';
         console.log(username, password, users);
     }
 
