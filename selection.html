@@ -25,7 +25,7 @@ layout: default
 </div>
 <script>
     function select_fun(item, sector) {
-        let master = '{{ site.data.master | jsonify }}';
+        let master = JSON.parse('{{ site.data.master | jsonify }}');
         console.log(item, sector);
         let item_v = master.filter(x => x.ItemName == item);
         if (sector == "1") {
