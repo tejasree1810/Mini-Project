@@ -17,7 +17,8 @@ layout: default
 </form>
 <script>
     function login_fun(username, password) {
-        let users = {{ site.data.users_db }};
-    console.log(username, password);
+        let users = '{{ site.data.users_db }}';
+        console.log(username, password, users);
     }
+
 </script>
