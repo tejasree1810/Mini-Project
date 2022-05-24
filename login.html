@@ -13,7 +13,7 @@ layout: default
             autocomplete="off">
     </div>
     <button type="button" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto"
-        onclick="login_fun(this.parent.name.value, this.parent.key.value)">Submit</button>
+        onclick="login_fun(this.parentElement.name.value, this.parentElement.key.value)">Submit</button>
 </form>
 <script>
     function login_fun(username, password) {
