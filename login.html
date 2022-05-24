@@ -1,0 +1,22 @@
+---
+title: Login
+layout: default
+---
+<h1 style="margin: 20px !important; ">Login</h1>
+<form method="post">
+    <div class="mb-4">
+        <input type="text" class="form-control" placeholder="Enter Username" name="name" id="name" required
+            autocomplete="off">
+    </div>
+    <div class="mb-5">
+        <input type="password" class="form-control" name="key" id="key" placeholder="Enter password" required
+            autocomplete="off">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto" onclick="login_fun(this.parent.name.value, this.parent.key.value)">Submit</button>
+</form>
+<script>
+    function login_fun(username, password) {
+        let users = {{ site.data.users_db }};
+        console.log(username, password);
+    }
+</script>
