@@ -31,17 +31,17 @@ layout: default
         let item_v = master.filter(x => x.ItemName == item)[0];
         console.log(item, sector, item_v);
         if (sector == "1") {
-
+            
         }
         else if (sector == "2") {
             document.getElementById("result").innerHTML = `<div class="alert alert-warning">The selected item is produced in the sector ${item_v.ProductionSector}</div>`
         }
         else if (sector == "3") {
             if (item_v.QualityTest == "Passed") {
-                document.getElementById("result").innerHTML = `<span class="alert alert-success">The element is tested!</span><br> ${JSON.stringify(item_v)}`
+                document.getElementById("result").innerHTML = `<span class="alert alert-success">The product is tested!</span><br><br> <span style="text-align:center">${JSON.stringify(item_v)}</span>`
             }
             else {
-                document.getElementById("result").innerHTML = `<span class="alert alert-danger">The element is not tested!</span>`
+                document.getElementById("result").innerHTML = `<span class="alert alert-danger">The product is not tested!</span>`
             }
         }
     }
